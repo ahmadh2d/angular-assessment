@@ -1,0 +1,23 @@
+# Build files
+dist/
+coverage/
+
+# Node modules
+node_modules/
+
+# Angular cache
+.angular/
+
+# Package files
+package-lock.json
+yarn.lock
+
+# Generated files
+*.min.js
+*.min.css
+
+# IDEs and editors
+.vscode/*
+.cursor/*
+
+build
