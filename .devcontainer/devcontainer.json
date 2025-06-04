@@ -1,0 +1,20 @@
+{
+  "name": "Angular Development",
+  "build": {
+    "dockerfile": "../Dockerfile"
+  },
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [4200],
+  "portsAttributes": {
+    "4200": {
+      "label": "Angular Dev Server",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "npm install",
+  "remoteUser": "root",
+  "remoteEnv": {
+    "NODE_ENV": "development",
+    "WATCH_MODE": "true"
+  }
+} 
