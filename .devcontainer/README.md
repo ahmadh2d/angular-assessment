@@ -5,13 +5,14 @@ This project includes a devcontainer configuration for developing your Angular v
 ## Getting Started
 
 ### Prerequisites
+
 - Visual Studio Code
 - Docker Desktop
 - Dev Containers extension for VS Code
 
 ### Using the Devcontainer
 
-1. **Open in Container**: 
+1. **Open in Container**:
    - Open the project in VS Code
    - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS)
    - Type "Dev Containers: Reopen in Container"
@@ -52,4 +53,4 @@ Your source code is mounted as a volume, so changes you make in VS Code will be 
 
 - If you encounter permission issues, ensure Docker Desktop is running with appropriate permissions
 - If the container fails to build, try rebuilding without cache: `Dev Containers: Rebuild Container`
-- For performance issues on macOS/Windows, consider using the docker-compose setup which uses named volumes for node_modules 
+- For performance issues on macOS/Windows, consider using the docker-compose setup which uses named volumes for node_modules
