@@ -1,0 +1,44 @@
+@reference "tailwindcss";
+
+/* Custom header styles */
+.search-field {
+  @apply w-full;
+}
+
+.search-field .mat-mdc-form-field-wrapper {
+  @apply bg-gray-50;
+}
+
+.search-field .mat-mdc-form-field-wrapper .mat-mdc-form-field-flex {
+  @apply rounded-lg bg-gray-50;
+}
+
+.search-field .mat-mdc-form-field-wrapper .mat-mdc-form-field-flex .mat-mdc-form-field-infix {
+  @apply py-3;
+}
+
+/* Profile menu custom styles */
+.mat-mdc-menu-panel {
+  @apply min-w-80 shadow-lg;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .search-field {
+    @apply max-w-xs;
+  }
+
+  .flex.items-center.space-x-4 {
+    @apply space-x-2;
+  }
+}
+
+@media (max-width: 640px) {
+  .search-field {
+    @apply max-w-44;
+  }
+
+  .search-field input {
+    @apply text-sm;
+  }
+}

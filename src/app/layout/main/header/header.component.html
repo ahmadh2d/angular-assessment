@@ -1,1 +1,85 @@
-<p>header works!</p>
+<header class="w-full border-b border-gray-200 bg-white shadow-sm">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+    <!-- Left side - can be used for logo or navigation -->
+    <div class="flex flex-shrink-0 items-center">
+      <!-- Logo or brand name can be added here -->
+    </div>
+
+    <!-- Center - Search Field -->
+    <div class="mx-4 max-w-2xl flex-1">
+      <mat-form-field appearance="outline" class="search-field w-full">
+        <mat-icon matPrefix class="text-gray-400">search</mat-icon>
+        <input
+          matInput
+          placeholder="Hae avainsanoja..."
+          [ngModel]="searchQuery()"
+          (ngModelChange)="onSearchChange($event)"
+          class="w-full"
+        />
+      </mat-form-field>
+    </div>
+
+    <!-- Right side - Notifications and Profile -->
+    <div class="flex items-center space-x-4">
+      <!-- Notification Bell -->
+      <button mat-icon-button class="text-gray-500 hover:text-gray-700" aria-label="Notifications">
+        <mat-icon>notifications_none</mat-icon>
+      </button>
+
+      <!-- Profile Menu -->
+      <div class="relative">
+        <button
+          mat-button
+          [matMenuTriggerFor]="profileMenu"
+          class="flex items-center space-x-2 rounded-full p-2 hover:bg-gray-100"
+        >
+          <div class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-300">
+            <mat-icon class="text-lg text-gray-600">person</mat-icon>
+          </div>
+          <mat-icon class="text-gray-500">keyboard_arrow_down</mat-icon>
+        </button>
+
+        <mat-menu #profileMenu="matMenu" class="mt-2">
+          <!-- Profile Header -->
+          <div class="border-b border-gray-100 px-4 py-3">
+            <div class="font-semibold text-gray-900">Kerola Tuomas Veikko</div>
+            <div class="text-sm text-gray-500">Erikoissairaanhoito</div>
+            <div class="text-sm text-gray-500">Paljatha. esh. P0007</div>
+          </div>
+
+          <!-- Menu Items -->
+          <div class="py-1">
+            <button
+              mat-menu-item
+              (click)="onProfileMenuClick('settings')"
+              class="flex items-center space-x-3 px-4 py-2"
+            >
+              <mat-icon class="text-gray-500">settings</mat-icon>
+              <span>Asetukset</span>
+            </button>
+
+            <button
+              mat-menu-item
+              (click)="onProfileMenuClick('admin')"
+              class="flex items-center space-x-3 px-4 py-2"
+            >
+              <mat-icon class="text-gray-500">admin_panel_settings</mat-icon>
+              <span>Avaa ylläpitäjän paneeli</span>
+            </button>
+
+            <mat-divider></mat-divider>
+
+            <button
+              mat-menu-item
+              (click)="onProfileMenuClick('logout')"
+              class="flex items-center space-x-3 px-4 py-2"
+            >
+              <mat-icon class="text-gray-500">logout</mat-icon>
+              <span>Kirjaudu ulos</span>
+            </button>
+          </div>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+</header>
