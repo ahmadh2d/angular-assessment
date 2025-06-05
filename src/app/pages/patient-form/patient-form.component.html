@@ -1,1 +1,129 @@
-<p>patient-form works!</p>
+<div class="min-h-screen bg-gray-50 py-8">
+  <div class="mx-auto max-w-4xl px-4">
+    <mat-card class="shadow-lg">
+      <mat-card-header class="mb-6 border-b border-gray-200 pb-4">
+        <div class="flex w-full items-center justify-between">
+          <div>
+            <h2 class="text-xl font-semibold text-gray-900">Potilaan koko nimi:</h2>
+            <p class="mt-1 text-sm text-gray-500">
+              Tuomas Veikko Kerola, Helsinki Sairala, Kardiologian osasto
+            </p>
+            <p class="text-sm text-gray-400">29/10/2024 14:49</p>
+          </div>
+          <button mat-icon-button class="text-gray-400">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+      </mat-card-header>
+
+      <mat-card-content>
+        <form [formGroup]="patientForm" (ngSubmit)="onSubmit()" class="space-y-6">
+          <!-- Patient Name Section -->
+          <div class="rounded-lg bg-gray-50 p-4">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Potilaan koko nimi</mat-label>
+              <input matInput formControlName="patientName" />
+            </mat-form-field>
+          </div>
+
+          <!-- Birth Date and Social Security Number -->
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <mat-form-field appearance="outline">
+              <mat-label>Syntymäaika:</mat-label>
+              <input matInput [matDatepicker]="birthDatePicker" formControlName="birthDate" />
+              <mat-datepicker-toggle matIconSuffix [for]="birthDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #birthDatePicker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Potilastunnus:</mat-label>
+              <input matInput formControlName="socialSecurityNumber" />
+            </mat-form-field>
+          </div>
+
+          <!-- Event Type -->
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Tapahtuman tyyppi:</mat-label>
+            <mat-select formControlName="eventType">
+              <mat-icon matPrefix>search</mat-icon>
+              <input matInput placeholder="Tapahtuman tyyppi..." class="p-2" />
+              <mat-option *ngFor="let type of eventTypes" [value]="type.value">
+                {{ type.label }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <!-- Visit Reason -->
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Käynnin syy:</mat-label>
+            <input matInput formControlName="visitReason" />
+            <mat-icon matSuffix>mic</mat-icon>
+          </mat-form-field>
+
+          <!-- Status Radio Buttons -->
+          <div class="space-y-3">
+            <h3 class="text-sm font-medium text-gray-700">Tila:</h3>
+            <mat-radio-group formControlName="status" class="flex flex-wrap gap-4">
+              <mat-radio-button
+                *ngFor="let option of statusOptions"
+                [value]="option.value"
+                class="mr-4"
+              >
+                {{ option.label }}
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+          <!-- Doctor -->
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Lääkäri:</mat-label>
+            <input matInput formControlName="doctor" readonly />
+          </mat-form-field>
+
+          <!-- Appointment Date and Time -->
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Vastaanottotaika ja -päivämäärä:</mat-label>
+            <input
+              matInput
+              [matDatepicker]="appointmentPicker"
+              formControlName="appointmentDateTime"
+            />
+            <mat-datepicker-toggle matIconSuffix [for]="appointmentPicker"></mat-datepicker-toggle>
+            <mat-datepicker #appointmentPicker></mat-datepicker>
+            <button mat-icon-button matSuffix type="button">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <!-- Additional Notes -->
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Lisähuomiot:</mat-label>
+            <textarea
+              matInput
+              formControlName="additionalNotes"
+              rows="4"
+              placeholder="Lisää huomioita tähän..."
+            ></textarea>
+            <mat-icon matSuffix>mic</mat-icon>
+          </mat-form-field>
+
+          <!-- Action Buttons -->
+          <div class="flex justify-end space-x-4 border-t border-gray-200 pt-6">
+            <button mat-stroked-button type="button" (click)="onCancel()" class="px-6 py-2">
+              Sulje
+            </button>
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              class="px-6 py-2"
+              [disabled]="!patientForm.valid"
+            >
+              Luo tapahtuma
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

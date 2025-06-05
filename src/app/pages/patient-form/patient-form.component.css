@@ -1,0 +1,87 @@
+@reference "tailwindcss";
+
+/* Patient form custom styles */
+.mat-mdc-card {
+  @apply rounded-lg bg-white;
+}
+
+.mat-mdc-card-header {
+  @apply mb-6 pb-4;
+}
+
+.mat-mdc-form-field {
+  @apply w-full;
+}
+
+.mat-mdc-form-field-appearance-outline .mat-mdc-form-field-wrapper {
+  @apply bg-white;
+}
+
+.mat-mdc-form-field-appearance-outline .mat-mdc-form-field-flex {
+  @apply rounded-md border border-gray-300;
+}
+
+.mat-mdc-form-field-appearance-outline.mat-focused .mat-mdc-form-field-flex {
+  @apply border-blue-500;
+}
+
+/* Radio button styling */
+.mat-mdc-radio-group {
+  @apply flex flex-wrap gap-4;
+}
+
+.mat-mdc-radio-button {
+  @apply mr-4 last:mr-0;
+}
+
+/* Button styling */
+.mat-mdc-raised-button.mat-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.mat-mdc-stroked-button {
+  @apply border border-gray-300 text-gray-700 hover:bg-gray-50;
+}
+
+/* Textarea styling */
+textarea.mat-mdc-input-element {
+  @apply resize-none;
+}
+
+/* Card content spacing */
+.mat-mdc-card-content {
+  @apply p-6;
+}
+
+/* Header section styling */
+.patient-header {
+  @apply mb-6 rounded-lg bg-gray-50 p-4;
+}
+
+/* Form field spacing */
+.space-y-6 > * + * {
+  @apply mt-6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .mat-mdc-card {
+    @apply mx-4 shadow-md;
+  }
+
+  .mat-mdc-card-content {
+    @apply p-4;
+  }
+
+  .space-y-6 > * + * {
+    @apply mt-4;
+  }
+
+  .flex.justify-end.space-x-4 {
+    @apply flex-col space-y-2 space-x-0;
+  }
+
+  .flex.justify-end.space-x-4 > button {
+    @apply w-full;
+  }
+}
