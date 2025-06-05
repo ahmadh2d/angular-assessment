@@ -1,16 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
-import { MatGridListModule } from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-patient-form',
@@ -20,26 +16,15 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule,
     MatRadioModule,
     MatButtonModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
     MatIconModule,
-    MatGridListModule,
   ],
   templateUrl: './patient-form.component.html',
   styleUrl: './patient-form.component.css',
 })
 export class PatientFormComponent {
   patientForm: FormGroup;
-
-  eventTypes = [
-    { value: 'konsultaatio', label: 'Konsultaatio' },
-    { value: 'rutiinitarkastus', label: 'Rutiinitarkastus' },
-    { value: 'seuranta', label: 'Seuranta' },
-    { value: 'kiireellinen', label: 'Kiireellinen' },
-  ];
 
   statusOptions = [
     { value: 'luonnos', label: 'Luonnos' },
@@ -49,26 +34,21 @@ export class PatientFormComponent {
 
   constructor(private fb: FormBuilder) {
     this.patientForm = this.fb.group({
-      patientName: ['', Validators.required],
-      birthDate: ['', Validators.required],
-      socialSecurityNumber: ['', Validators.required],
-      eventType: ['', Validators.required],
-      visitReason: ['', Validators.required],
-      status: ['luonnos', Validators.required],
-      doctor: ['Tuomas Veikko Kerola', Validators.required],
-      appointmentDateTime: ['', Validators.required],
+      patientName: [''],
+      birthDate: [''],
+      socialSecurityNumber: [''],
+      eventType: [''],
+      visitReason: [''],
+      status: ['luonnos'],
+      doctor: [{ value: 'Tuomas Veikko Kerola', disabled: true }],
+      appointmentDateTime: ['29/10/2024 14:49'],
       additionalNotes: [''],
     });
   }
 
   onSubmit() {
-    if (this.patientForm.valid) {
-      console.log('Form submitted:', this.patientForm.value);
-      // Handle form submission
-    } else {
-      console.log('Form is invalid');
-      // Handle validation errors
-    }
+    console.log('Form submitted:', this.patientForm.value);
+    // Handle form submission
   }
 
   onCancel() {
