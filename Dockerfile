@@ -4,6 +4,15 @@ FROM node:22
 # Set working directory
 WORKDIR /workspace
 
+# Install system Chromium directly
+RUN apt-get update && apt-get install -y \
+  chromium \
+  --no-install-recommends \
+  && rm -rf /var/lib/apt/lists/*
+
+# Set Chromium binary path explicitly
+ENV CHROME_BIN=/usr/bin/chromium
+
 # Install Angular CLI globally
 RUN npm install -g @angular/cli@19
 
@@ -20,4 +29,4 @@ COPY . .
 EXPOSE 4200
 
 # Default command
-CMD ["npm", "start"] 
+CMD ["npm", "start", "--", "--host", "0.0.0.0"]
