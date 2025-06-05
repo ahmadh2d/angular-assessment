@@ -11,3 +11,10 @@
     font-family: Roboto, 'Helvetica Neue', sans-serif;
   }
 }
+
+@layer components {
+  /* Angular Material Overrides */
+  .mdc-notched-outline__notch {
+    border-right: none;
+  }
+}
