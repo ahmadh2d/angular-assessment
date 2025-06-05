@@ -1,11 +1,25 @@
-<div>
-  <app-quick-actions></app-quick-actions>
-  <main>
-    <app-worklist></app-worklist>
-    <app-notepad></app-notepad>
-  </main>
-  <aside>
-    <app-sidebar-widgets></app-sidebar-widgets>
-    <app-recent-patients></app-recent-patients>
-  </aside>
+<div class="min-h-screen bg-gray-50">
+  <!-- Quick Actions Banner -->
+  <div class="border-b border-gray-200 bg-white">
+    <app-quick-actions></app-quick-actions>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="flex flex-1 overflow-hidden">
+    <!-- Main Content -->
+    <main class="flex flex-1 flex-col overflow-hidden lg:flex-row">
+      <!-- Worklist Component (includes notepad internally) -->
+      <div class="flex-1 overflow-auto">
+        <app-worklist></app-worklist>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="flex w-full flex-col border-l border-gray-200 bg-white lg:w-80 xl:w-96">
+      <app-sidebar-widgets></app-sidebar-widgets>
+      <div class="flex-1 overflow-auto">
+        <app-recent-patients></app-recent-patients>
+      </div>
+    </aside>
+  </div>
 </div>

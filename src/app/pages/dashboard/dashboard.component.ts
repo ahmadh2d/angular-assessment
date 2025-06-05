@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { QuickActionsComponent } from '../../components/quick-actions/quick-actions.component';
 import { WorklistComponent } from '../../components/worklist/worklist.component';
-import { NotepadComponent } from '../../components/notepad/notepad.component';
 import { RecentPatientsComponent } from '../../components/recent-patients/recent-patients.component';
 import { SidebarWidgetsComponent } from '../../components/sidebar-widgets/sidebar-widgets.component';
 
@@ -10,9 +9,7 @@ import { SidebarWidgetsComponent } from '../../components/sidebar-widgets/sideba
   imports: [
     QuickActionsComponent,
     WorklistComponent,
-    NotepadComponent,
     RecentPatientsComponent,
-    SidebarWidgetsComponent,
     SidebarWidgetsComponent,
   ],
   templateUrl: './dashboard.component.html',
