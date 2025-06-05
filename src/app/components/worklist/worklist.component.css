@@ -1,0 +1,11 @@
+.block-buttons button:first-child {
+  background-color: rgb(15, 68, 166);
+}
+
+.block-buttons button:nth-child(2) {
+  background-color: rgb(113, 159, 223);
+}
+
+.block-buttons button:nth-child(3) {
+  background-color: rgb(126, 205, 254);
+}

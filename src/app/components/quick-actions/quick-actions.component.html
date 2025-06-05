@@ -1,12 +1,14 @@
-<div class="bg-[#E6EAF0] px-6 py-8 rounded-xl">
+<div class="rounded-xl bg-[#E6EAF0] px-6 py-8">
   <div class="mx-auto flex flex-wrap justify-center gap-10">
     <button
       *ngFor="let action of actions"
       (click)="actionClick(action.name)"
-      class="flex flex-col items-center cursor-pointer transition-opacity hover:opacity-70"
+      class="flex cursor-pointer flex-col items-center transition-opacity hover:opacity-70"
     >
-      <div class="relative mb-3 flex h-15 w-15 items-center justify-center rounded-xl bg-[#D3D7DC] shadow-sm">
-        <mat-icon class="text-xl scale-150 !text-gray-700">{{ action.icon }}</mat-icon>
+      <div
+        class="relative mb-3 flex h-15 w-15 items-center justify-center rounded-xl bg-[#D3D7DC] shadow-sm"
+      >
+        <mat-icon class="scale-150 text-xl !text-gray-700">{{ action.icon }}</mat-icon>
         <span
           *ngIf="action.badge"
           class="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-blue-500 text-xs text-white"
@@ -14,7 +16,7 @@
           {{ action.badge }}
         </span>
       </div>
-      <span class="text-center text-xs text-gray-700 max-w-[100px]">{{ action.name }}</span>
+      <span class="max-w-[100px] text-center text-xs text-gray-700">{{ action.name }}</span>
     </button>
   </div>
 </div>

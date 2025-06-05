@@ -19,7 +19,7 @@ export class WorklistComponent {
       status: 'Etävastaanotito',
       description:
         'Hei tohtori, kiitos, että hyväksyitte tapaamisen. Tarvitsen apua uusien oireideni kanssa, joita aloin kokea viime viikolla.',
-      statusColor: 'bg-blue-100 text-blue-800',
+      statusColor: 'bg-blue-500 text-white',
       actions: ['Avaa etävastaanotito', 'Avaa potilaan', 'Vieritit'],
     },
     {
@@ -28,7 +28,7 @@ export class WorklistComponent {
       patientId: '210637-963A',
       status: 'Etävastaanotito',
       description: '',
-      statusColor: 'bg-blue-100 text-blue-800',
+      statusColor: 'bg-blue-500 text-white',
       actions: ['Avaa etävastaanotito', 'Avaa potilaan', 'Vieritit'],
     },
     {
@@ -37,7 +37,7 @@ export class WorklistComponent {
       patientId: '060526-741B',
       status: 'Vastaanotito',
       description: '',
-      statusColor: 'bg-green-100 text-green-800',
+      statusColor: 'bg-green-500 text-white',
       actions: ['Aloita vastaanotio', 'Avaa potilaan', 'Vieritit'],
     },
     {
@@ -46,7 +46,7 @@ export class WorklistComponent {
       patientId: '060526-741B',
       status: 'Hoitopuhelu',
       description: '',
-      statusColor: 'bg-purple-100 text-purple-800',
+      statusColor: 'bg-purple-500 text-white',
       actions: ['Avaa etävastaanotito', 'Avaa potilaan', 'Vieritit'],
     },
     {
@@ -55,7 +55,7 @@ export class WorklistComponent {
       patientId: '060526-741B',
       status: 'Konsultaatio',
       description: '',
-      statusColor: 'bg-orange-100 text-orange-800',
+      statusColor: 'bg-orange-500 text-white',
       actions: ['Aloita vastaanotio', 'Avaa potilaan', 'Vieritit'],
     },
     {
@@ -64,7 +64,7 @@ export class WorklistComponent {
       patientId: '151139-258D',
       status: 'Etävastaanotito',
       description: '',
-      statusColor: 'bg-blue-100 text-blue-800',
+      statusColor: 'bg-blue-500 text-white',
       actions: ['Avaa etävastaanotito', 'Avaa potilaan', 'Vieritit'],
     },
   ];
