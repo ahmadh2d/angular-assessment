@@ -28,6 +28,6 @@
 
   .mat-mdc-form-field-hint-wrapper ::placeholder,
   .mat-mdc-input-element::placeholder {
-      @apply text-gray-400;
+    @apply text-gray-400;
   }
 }

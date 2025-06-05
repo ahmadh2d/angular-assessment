@@ -9,7 +9,7 @@
             </p>
           </div>
           <div class="flex items-center space-x-1">
-            <span class="text-sm text-gray-600 pt-1.5">29/10/2024 14:49</span>
+            <span class="pt-1.5 text-sm text-gray-600">29/10/2024 14:49</span>
             <button mat-icon-button class="text-gray-400">
               <mat-icon>edit</mat-icon>
             </button>
@@ -21,9 +21,7 @@
         <form [formGroup]="patientForm" (ngSubmit)="onSubmit()" class="space-y-6">
           <!-- Patient Name Section -->
           <div>
-            <label for="patientName" class="mb-2 block text-gray-600"
-              >Potilaan koko nimi:</label
-            >
+            <label for="patientName" class="mb-2 block text-gray-600">Potilaan koko nimi:</label>
             <div>
               <mat-form-field appearance="outline" class="w-full">
                 <input matInput formControlName="patientName" id="patientName" />
@@ -34,9 +32,7 @@
           <!-- Birth Date and Social Security Number -->
           <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
             <div>
-              <label for="birthDate" class="mb-2 block text-gray-600"
-                >Syntymäaika:</label
-              >
+              <label for="birthDate" class="mb-2 block text-gray-600">Syntymäaika:</label>
               <mat-form-field appearance="outline" class="w-full">
                 <input matInput formControlName="birthDate" id="birthDate" />
               </mat-form-field>
@@ -54,9 +50,7 @@
 
           <!-- Event Type -->
           <div>
-            <label for="eventType" class="mb-2 block text-gray-600"
-              >Tapahtuman tyyppi:</label
-            >
+            <label for="eventType" class="mb-2 block text-gray-600">Tapahtuman tyyppi:</label>
             <mat-form-field appearance="outline" class="w-full">
               <mat-icon matPrefix class="text-gray-400">search</mat-icon>
               <input
@@ -71,11 +65,14 @@
 
           <!-- Visit Reason -->
           <div>
-            <label for="visitReason" class="mb-2 block text-gray-600"
-              >Käynnin syy:</label
-            >
+            <label for="visitReason" class="mb-2 block text-gray-600">Käynnin syy:</label>
             <mat-form-field appearance="outline" class="w-full">
-              <input matInput formControlName="visitReason" id="visitReason" placeholder="Käynnin syy" />
+              <input
+                matInput
+                formControlName="visitReason"
+                id="visitReason"
+                placeholder="Käynnin syy"
+              />
               <mat-icon matSuffix>mic</mat-icon>
             </mat-form-field>
           </div>
@@ -96,11 +93,9 @@
 
           <!-- Doctor -->
           <div class="flex place-items-center-safe">
-            <label for="doctor" class="text-gray-600 w-2/5">
-              Lääkäri:
-            </label>
+            <label for="doctor" class="w-2/5 text-gray-600"> Lääkäri: </label>
             <mat-form-field appearance="outline" class="!w-3/5">
-            <input matInput formControlName="doctor" readonly id="doctor" />
+              <input matInput formControlName="doctor" readonly id="doctor" />
             </mat-form-field>
           </div>
 
@@ -109,24 +104,22 @@
             <label for="appointmentDateTime" class="w-2/5 text-gray-600">
               Vastaanottotaika ja -päivämäärä:
             </label>
-              <mat-form-field appearance="outline" class="!w-3/5">
-                <input
-                  matInput
-                  formControlName="appointmentDateTime"
-                  placeholder="29/10/2024 14:49"
-                  id="appointmentDateTime"
-                />
-                <button mat-icon-button matSuffix type="button">
-                  <mat-icon>edit</mat-icon>
-                </button>
-              </mat-form-field>
+            <mat-form-field appearance="outline" class="!w-3/5">
+              <input
+                matInput
+                formControlName="appointmentDateTime"
+                placeholder="29/10/2024 14:49"
+                id="appointmentDateTime"
+              />
+              <button mat-icon-button matSuffix type="button">
+                <mat-icon>edit</mat-icon>
+              </button>
+            </mat-form-field>
           </div>
 
           <!-- Additional Notes -->
           <div>
-            <label for="additionalNotes" class="mb-2 block text-gray-600"
-              >Lisähuomiot:</label
-            >
+            <label for="additionalNotes" class="mb-2 block text-gray-600">Lisähuomiot:</label>
             <mat-form-field appearance="outline" class="w-full">
               <textarea
                 matInput
